@@ -1,0 +1,54 @@
+clean-cache:
+  command: "sudo apt-get clean && sudo apt-get autoremove"
+show-ip:
+  command: "ip a | grep inet"
+list-processes:
+  command: "ps aux"
+disk-usage:
+  command: "df -h"
+git-status:
+  command: "git status"
+update-system:
+  command: "sudo apt update && sudo apt upgrade"
+list-content:
+  command: "ls"
+create-folder:
+  command: "mkdir"
+delete-folder:
+  command: "rmdir"
+path:
+  command: "pwd"
+task-manager:
+  command: "top"
+search:
+  command: "grep"
+system-disk:
+  command: "df"
+current-user:
+  command: "whoami"
+add-user:
+  command: "useradd"
+used-commands:
+  command: "history"
+calender:
+  command: "cal"
+clear:
+  command: "clear"
+manual-page:
+  command: "man"
+remove-file:
+  command: "rm" 
+current-use-info:
+  command: "w"
+extract-zip:
+  command: "unzip"
+zip-archive:
+  command: "zip"
+cpu-usage:
+  command: "top -b -n1 | head -n 20"
+ram-usage:
+  command: "free -h"
+ping-google:
+  command: "ping -c 4 google.com"
+show-processes:
+  command: "ps aux --sort=-%mem | head -n 10"
