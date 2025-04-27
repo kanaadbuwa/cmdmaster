@@ -52,3 +52,527 @@ ping-google:
   command: "ping -c 4 google.com"
 show-processes:
   command: "ps aux --sort=-%mem | head -n 10"
+restart-system:
+  command: "sudo reboot"
+list-active-services:
+  command: "systemctl list-units --type=service --state=active"
+show-disk-partitions:
+  command: "lsblk"
+system-info:
+  command: "uname -a"
+show-network-interfaces:
+  command: "ifconfig"
+list-users:
+  command: "cat /etc/passwd"
+show-logs:
+  command: "journalctl -xe"
+check-ports:
+  command: "ss -tuln"
+list-installed-packages:
+  command: "dpkg --get-selections"
+kill-process:
+  command: "kill"
+find-file:
+  command: "find / -name"
+show-memory-info:
+  command: "vmstat"
+system-up-time:
+  command: "uptime"
+show-load-average:
+  command: "uptime | awk '{print $10,$11,$12}'"
+check-hardware-info:
+  command: "lshw"
+show-disk-space:
+  command: "du -sh *"
+clear-history:
+  command: "history -c"
+check-system-health:
+  command: "dmesg | tail -n 50"
+check-system-load:
+  command: "uptime"
+list-logged-in-users:
+  command: "w"
+get-network-info:
+  command: "nmcli device show"
+get-ip-address:
+  command: "hostname -I"
+list-open-files:
+  command: "lsof"
+list-running-services:
+  command: "systemctl list-units --type=service --state=running"
+show-kernel-version:
+  command: "uname -r"
+show-disk-usage:
+  command: "du -sh /home/*"
+create-symbolic-link:
+  command: "ln -s"
+show-git-branches:
+  command: "git branch -a"
+search-file-content:
+  command: "grep -r 'search_term' /path/to/dir"
+system-uptime:
+  command: "uptime"
+check-available-memory:
+  command: "free -m"
+show-hardware-info:
+  command: "lscpu"
+list-installed-python-packages:
+  command: "pip list"
+check-ssh-status:
+  command: "systemctl status ssh"
+reboot-system:
+  command: "sudo reboot"
+shutdown-system:
+  command: "sudo shutdown -h now"
+create-backup:
+  command: "tar -cvf /path/to/backup.tar /path/to/directory"
+restore-backup:
+  command: "tar -xvf /path/to/backup.tar -C /path/to/restore"
+check-disk-health:
+  command: "smartctl -a /dev/sda"
+check-network-usage:
+  command: "ifstat"
+list-docker-containers:
+  command: "docker ps"
+stop-docker-container:
+  command: "docker stop container_name"
+start-docker-container:
+  command: "docker start container_name"
+remove-docker-container:
+  command: "docker rm container_name"
+list-available-docker-images:
+  command: "docker images"
+clear-docker-cache:
+  command: "docker system prune -f"
+list-system-users:
+  command: "cut -d: -f1 /etc/passwd"
+get-current-directory:
+  command: "pwd"
+create-new-file:
+  command: "touch filename"
+system-version:
+  command: "lsb_release -a"
+kernel-version:
+  command: "uname -s -r"
+system-info:
+  command: "hostnamectl"
+cpu-info:
+  command: "cat /proc/cpuinfo"
+memory-info:
+  command: "cat /proc/meminfo"
+hardware-summary:
+  command: "lshw -short"
+add-group:
+  command: "groupadd group_name"
+remove-group:
+  command: "groupdel group_name"
+add-user-to-group:
+  command: "usermod -aG group_name user_name"
+change-password:
+  command: "passwd user_name"
+lock-user-account:
+  command: "passwd -l user_name"
+unlock-user-account:
+  command: "passwd -u user_name"
+move-file:
+  command: "mv source destination"
+copy-file:
+  command: "cp source destination"
+rename-file:
+  command: "mv old_name new_name"
+change-permission:
+  command: "chmod 755 file_name"
+change-owner:
+  command: "chown user:group file_name"
+create-symlink:
+  command: "ln -s target link_name"
+create-partition:
+  command: "fdisk /dev/sda"
+format-partition:
+  command: "mkfs.ext4 /dev/sda1"
+mount-partition:
+  command: "mount /dev/sda1 /mnt"
+unmount-partition:
+  command: "umount /mnt"
+check-disk:
+  command: "fsck /dev/sda1"
+kill-process-by-name:
+  command: "pkill process_name"
+monitor-process:
+  command: "top -u user_name"
+background-process:
+  command: "nohup command &"
+find-process:
+  command: "ps aux | grep process_name"
+show-network-statistics:
+  command: "netstat -tuln"
+check-open-ports:
+  command: "nmap localhost"
+check-interface-status:
+  command: "ifconfig eth0"
+show-ip-routes:
+  command: "ip route show"
+install-package:
+  command: "sudo apt install package_name"
+remove-package:
+  command: "sudo apt remove package_name"
+search-package:
+  command: "apt search package_name"
+list-installed-packages:
+  command: "dpkg -l"
+update-package-list:
+  command: "sudo apt update"
+upgrade-packages:
+  command: "sudo apt upgrade"
+extract-tar:
+  command: "tar -xvf file.tar"
+compress-tar:
+  command: "tar -cvf file.tar directory"
+extract-gzip:
+  command: "gunzip file.gz"
+compress-gzip:
+  command: "gzip file"
+extract-bzip:
+  command: "bunzip2 file.bz2"
+compress-bzip:
+  command: "bzip2 file"
+view-log-file:
+  command: "cat /var/log/syslog"
+tail-log:
+  command: "tail -f /var/log/auth.log"
+clear-log:
+  command: "truncate -s 0 /var/log/syslog"
+show-cpu-usage:
+  command: "mpstat"
+show-memory-usage:
+  command: "free -h"
+disk-space-usage:
+  command: "du -sh *"
+process-info:
+  command: "ps aux"
+trace-route:
+  command: "traceroute google.com"
+test-port:
+  command: "nc -zv host port"
+test-network-speed:
+  command: "speedtest-cli"
+run-docker-container:
+  command: "docker run -d image_name"
+stop-docker-container:
+  command: "docker stop container_id"
+remove-docker-image:
+  command: "docker rmi image_id"
+list-docker-images:
+  command: "docker images"
+generate-random-password:
+  command: "openssl rand -base64 12"
+view-file-content:
+  command: "cat file_name"
+count-lines-in-file:
+  command: "wc -l file_name"
+print-date:
+  command: "date"
+check-system-time:
+  command: "timedatectl"
+sync-system-time:
+  command: "sudo ntpdate pool.ntp.org"
+check-cpu-usage:
+  command: "mpstat -P ALL"
+copy-directory:
+  command: "cp -r source_dir destination_dir"
+rename-directory:
+  command: "mv old_dir new_dir"
+change-file-owner:
+  command: "chown user:group file_name"
+change-file-group:
+  command: "chgrp group_name file_name"
+view-file-details:
+  command: "stat file_name"
+list-directory-content:
+  command: "ls -l"
+show-hidden-files:
+  command: "ls -a"
+file-type:
+  command: "file file_name"
+check-file-checksum:
+  command: "sha256sum file_name"
+
+create-file-system:
+  command: "mkfs.ext4 /dev/sda1"
+resize-file-system:
+  command: "resize2fs /dev/sda1"
+check-partition-table:
+  command: "parted /dev/sda print"
+mount-file-system:
+  command: "mount /dev/sda1 /mnt"
+remount-file-system:
+  command: "mount -o remount,rw /mnt"
+disk-partitioning:
+  command: "fdisk /dev/sda"
+list-partitions:
+  command: "lsblk"
+create-swap-space:
+  command: "mkswap /dev/sda2 && swapon /dev/sda2"
+check-available-space:
+  command: "df -h"
+show-processes:
+  command: "ps aux"
+process-info-by-id:
+  command: "ps -p process_id"
+terminate-process:
+  command: "kill process_id"
+force-terminate-process:
+  command: "kill -9 process_id"
+background-process:
+  command: "command &"
+list-running-processes:
+  command: "top"
+monitor-process-tree:
+  command: "pstree"
+show-network-interfaces:
+  command: "ip a"
+show-routing-table:
+  command: "ip route"
+show-connection-status:
+  command: "ss -tuln"
+check-ping-status:
+  command: "ping -c 4 destination_ip"
+network-trace:
+  command: "traceroute destination_ip"
+check-dns-servers:
+  command: "cat /etc/resolv.conf"
+show-system-info:
+  command: "uname -a"
+check-cpu-usage:
+  command: "mpstat -P ALL"
+show-memory-usage:
+  command: "free -h"
+show-swap-usage:
+  command: "swapon -s"
+disk-usage:
+  command: "du -sh /path/to/dir"
+load-average:
+  command: "uptime"
+check-disk-health:
+  command: "smartctl -a /dev/sda"
+install-package:
+  command: "sudo apt install package_name"
+update-package-cache:
+  command: "sudo apt update"
+upgrade-all-packages:
+  command: "sudo apt upgrade"
+remove-package:
+  command: "sudo apt remove package_name"
+list-installed-packages:
+  command: "dpkg -l"
+search-package:
+  command: "apt-cache search package_name"
+check-system-logs:
+  command: "journalctl"
+system-uptime:
+  command: "uptime"
+system-load-average:
+  command: "uptime | awk '{print $10,$11,$12}'"
+list-running-services:
+  command: "systemctl list-units --type=service --state=running"
+check-ssh-status:
+  command: "systemctl status ssh"
+show-user-logged-in:
+  command: "w"
+show-active-users:
+  command: "who"
+reboot-system:
+  command: "sudo reboot"
+shutdown-system:
+  command: "sudo shutdown -h now"
+schedule-reboot:
+  command: "sudo shutdown -r +10"
+cancel-shutdown:
+  command: "sudo shutdown -c"
+compress-file:
+  command: "gzip file_name"
+extract-gzip:
+  command: "gunzip file.gz"
+compress-directory:
+  command: "tar -cvf archive.tar directory/"
+extract-tar:
+  command: "tar -xvf archive.tar"
+create-tar-gz:
+  command: "tar -czvf archive.tar.gz directory/"
+extract-tar-gz:
+  command: "tar -xzvf archive.tar.gz"
+resize-disk-partition:
+  command: "parted /dev/sda resize 1 0 100GB"
+list-mounted-file-systems:
+  command: "cat /etc/mtab"
+mount-with-options:
+  command: "mount -o loop file.iso /mnt"
+check-disk-usage:
+  command: "du -sh /mnt"
+sync-data:
+  command: "sync"
+set-executable-permission:
+  command: "chmod +x file_name"
+set-read-only-permission:
+  command: "chmod 444 file_name"
+set-owner:
+  command: "chown user:group file_name"
+set-group:
+  command: "chgrp group_name file_name"
+set-system-time:
+  command: "sudo date +%T -s '12:00:00'"
+check-system-time:
+  command: "date"
+synchronize-time:
+  command: "sudo ntpdate pool.ntp.org"
+view-timezone:
+  command: "timedatectl"
+change-timezone:
+  command: "timedatectl set-timezone Region/City"
+list-users:
+  command: "cat /etc/passwd"
+add-user:
+  command: "sudo useradd user_name"
+delete-user:
+  command: "sudo userdel user_name"
+set-user-password:
+  command: "sudo passwd user_name"
+lock-user:
+  command: "sudo usermod -L user_name"
+unlock-user:
+  command: "sudo usermod -U user_name"
+start-docker-container:
+  command: "docker start container_name"
+stop-docker-container:
+  command: "docker stop container_name"
+list-docker-containers:
+  command: "docker ps"
+create-docker-image:
+  command: "docker build -t image_name ."
+run-docker-container:
+  command: "docker run -d -p 80:80 image_name"
+list-kvm-vms:
+  command: "virsh list"
+start-kvm-vm:
+  command: "virsh start vm_name"
+check-host-reachability:
+  command: "ping -c 4 host_name"
+show-open-sockets:
+  command: "ss -tuln"
+trace-network-path:
+  command: "traceroute host_name"
+find-network-issues:
+  command: "mtr -rwzbc 100 host_name"
+check-dns-servers:
+  command: "cat /etc/resolv.conf"
+configure-ipv6:
+  command: "sysctl -w net.ipv6.conf.all.disable_ipv6=1"
+manage-ip-routes:
+  command: "ip route add 192.168.1.0/24 via 192.168.0.1"
+enable-ip-forwarding:
+  command: "sysctl -w net.ipv4.ip_forward=1"
+show-swap-space:
+  command: "swapon -s"
+monitor-process-usage:
+  command: "pidstat"
+network-traffic-monitor:
+  command: "iftop"
+monitor-disk-usage:
+  command: "iotop"
+find-files-by-name:
+  command: "find /path/to/search -name 'filename'"
+find-files-by-size:
+  command: "find /path/to/search -size +100M"
+find-files-by-type:
+  command: "find /path/to/search -type f"
+search-files-by-content:
+  command: "grep -l 'search_term' /path/to/search/*"
+show-routes:
+  command: "ip route show"
+check-network-interfaces:
+  command: "ip addr show"
+verify-network-interfaces:
+  command: "ifup eth0"
+show-dns-caches:
+  command: "dig @localhost example.com"
+view-system-configuration:
+  command: "sysctl -a"
+change-system-parameter:
+  command: "sysctl -w parameter=value"
+check-system-load:
+  command: "uptime"
+view-cron-jobs:
+  command: "crontab -l"
+schedule-cron-job:
+  command: "crontab -e"
+remove-cron-job:
+  command: "crontab -r"
+check-audit-log:
+  command: "ausearch -m avc"
+view-system-log:
+  command: "tail -f /var/log/syslog"
+clear-log-file:
+  command: "echo > /var/log/syslog"
+check-file-permissions:
+  command: "ls -l file_name"
+set-directory-permission:
+  command: "chmod 755 directory_name"
+set-file-immutable:
+  command: "chattr +i file_name"
+check-firewall-status:
+  command: "ufw status"
+enable-firewall:
+  command: "ufw enable"
+disable-firewall:
+  command: "ufw disable"
+allow-port:
+  command: "ufw allow 22/tcp"
+deny-port:
+  command: "ufw deny 80/tcp"
+power-off-system:
+  command: "sudo poweroff"
+halt-system:
+  command: "sudo halt"
+reboot-system-now:
+  command: "sudo reboot now"
+list-kvm-vms:
+  command: "virsh list --all"
+start-kvm-vm:
+  command: "virsh start vm_name"
+create-kvm-vm:
+  command: "virt-install --name vm_name --ram 1024 --disk path=/var/lib/libvirt/images/vm_name.img,size=10 --cdrom /path/to/iso"
+view-detailed-disk-usage:
+  command: "ncdu"
+view-system-hardware:
+  command: "lshw"
+system-summary-report:
+  command: "inxi -Fxz"
+list-installed-packages (RPM-based systems):
+  command: "rpm -qa"
+install-package (using dnf):
+  command: "sudo dnf install package_name"
+remove-package (using dnf):
+  command: "sudo dnf remove package_name"
+find-by-permission:
+  command: "find /path -perm 644"
+replace-text-in-file:
+  command: "sed -i 's/old_text/new_text/g' file_name"
+view-first-lines-of-file:
+  command: "head -n 10 file_name"
+view-last-lines-of-file:
+  command: "tail -n 10 file_name"
+show-threads-of-process:
+  command: "ps -eLf"
+background-job:
+  command: "command &"
+bring-background-job-to-foreground:
+  command: "fg"
+view-running-background-jobs:
+  command: "jobs"
+trace-network-traffic:
+  command: "tcpdump"
+configure-ip-address:
+  command: "ip addr add 192.168.1.10/24 dev eth0"
+show-connection-status:
+  command: "netstat -tuln"
+
